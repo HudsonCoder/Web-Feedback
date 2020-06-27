@@ -1,0 +1,174 @@
+body{
+	width: 100%;
+	height: auto;
+	background: #dadaca;
+
+}
+#bottom{
+	width: 700px;
+	height: 1650px;
+	background: white;
+	margin-left: 420px;
+	margin-top: 50px;
+}
+#bottom .top{
+  width: 700px;
+  height: 180px;
+  background: #3b6075;
+  color: white;
+  text-align: center;
+
+
+}
+#bottom .top img{
+  float: left;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+#bottom .top h2{
+
+  padding-top: 80px;
+  margin-left: 30px;
+}
+#bottom h2{
+	text-align: center;
+	padding-top: 25px;
+}
+#bottom h4{
+	text-align: center;
+
+}
+#bottom h5{
+	margin-left: 40px;
+}
+#bottom .in{
+	width: 550px;
+	height: 40px;
+	margin-left: 70px;
+}
+#bottom input{
+	margin-left: 45px;
+
+}
+#bottom button{
+	width: 120px;
+	height: 35px;
+	margin-left: 265px;
+	margin-top: 30px;
+  background: #3b6075;
+  color: white;
+}
+#bottom #top{
+	width: 700px;
+	height: 70px;
+	
+	float: left;
+
+}
+div.stars {
+  width: 270px;
+  display: inline-block;
+  margin-left: 20px;
+}
+input.star { display: none; }
+
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+input.star-1:checked ~ label.star:before { color: #F62; } 
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+
+
+
+
+
+div.stars2 {
+  width: 270px;
+  display: inline-block;
+  margin-left: 20px;
+}
+input.star1 { display: none; }
+
+label.star1 {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+input.star1:checked ~ label.star1:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+input.star-55:checked ~ label.star1:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+input.star-11:checked ~ label.star1:before { color: #F62; } 
+label.star1:hover { transform: rotate(-15deg) scale(1.3); }
+label.star1:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+
+
+div.stars3 {
+  width: 270px;
+  display: inline-block;
+  margin-left: 20px;
+}
+input.star2 { display: none; }
+
+label.star2 {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+input.star2:checked ~ label.star2:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+input.star-5a:checked ~ label.star2:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+input.star-1a:checked ~ label.star2:before { color: #F62; } 
+label.star2:hover { transform: rotate(-15deg) scale(1.3); }
+label.star2:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

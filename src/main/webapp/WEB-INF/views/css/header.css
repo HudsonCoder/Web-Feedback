@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.image {
+    height: 100px;
+}
+.container {
+    border: black solid 1px;
+    display: flex;
+    flex-direction: row;
+}
+.element {
+
+}
+.search {
+    align-items: center;
+    height: 36px;
+    width: 250px;
+    margin-right: 100px;
+}
+.text {
+    font-weight: bold;
+    padding: 4px;
+    margin-right: 8px;
+    margin-left: 8px;
+    text-decoration: none;
+}
+.top-menu {
+    margin-left: 500px;
+    display: flex;
+    flex-direction: row;
+}
+.container-3 {
+	width: 300px;
+	vertical-align: middle;
+	white-space: nowrap;
+	position: relative;
+}
+
+.container-3 input#search {
+	width: 250px;
+	height: 40px;
+	background: #2b303b;
+	border: none;
+	font-size: 10pt;
+	float: left;
+	color: #262626;
+	padding-left: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.container-3 input#search::-webkit-input-placeholder {
+	color: #65737e;
+}
+
+.container-3 input#search:-moz-placeholder { /* Firefox 18- */
+	color: #65737e;
+}
+
+.container-3 input#search::-moz-placeholder { /* Firefox 19+ */
+	color: #65737e;
+}
+
+.container-3 input#search:-ms-input-placeholder {
+	color: #65737e;
+}
+
+.container-3 .icon {
+	position: absolute;
+	top: 50%;
+	margin-left: 13px;
+	margin-top: 7px;
+	*z-index: 1;
+	color: #4f5b66;
+}
+
+.container-3 input#search:focus, .container-3 input#search:active {
+	outline: none;
+}
+
+.container-3:hover .icon {
+	margin-top: 10px;
+	color: #93a2ad;
+}

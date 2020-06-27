@@ -1,0 +1,351 @@
+body {
+	width: 100%;
+	height: 1000px;
+	background: #dadaca;
+}
+
+#bottom {
+	width: 700px;
+	height: 1050px;
+	background: white;
+	margin-left: 420px;
+	margin-top: 50px;
+}
+
+#bottom .top {
+	width: 700px;
+	height: 180px;
+	background: #3b6075;
+	color: white;
+	text-align: center;
+}
+
+#bottom .top img {
+	float: left;
+	margin-left: 50px;
+	margin-top: 15px;
+}
+
+#bottom .top h1 {
+	padding-top: 50px;
+	margin-left: 30px;
+}
+
+#bottom h1 {
+	text-align: center;
+	padding-top: 25px;
+}
+
+#bottom h4 {
+	text-align: center;
+}
+
+#bottom h5 {
+	margin-left: 40px;
+}
+
+#bottom .in {
+	width: 550px;
+	height: 40px;
+	margin-left: 70px;
+}
+
+#bottom input {
+	margin-left: 45px;
+}
+
+#bottom button {
+	width: 120px;
+	height: 35px;
+	margin-left: 250px;
+	margin-top: 30px;
+	background: #3b6075;
+	color: white;
+}
+
+#bottom #top {
+	width: 700px;
+	height: 70px;
+	float: left;
+}
+
+.office-form-theme-primary-color {
+	color: #3b6075;
+}
+
+.office-form-theme-secondary-color {
+	color: #2e4b5b;
+}
+
+.office-form-theme-primary-background {
+	background: #3b6075;
+	color: #FFFFFF;
+}
+
+.office-form-theme-secondary-background {
+	background: #2e4b5b;
+}
+
+.office-form-theme-primary-foreground,
+	.office-form-theme-primary-foreground a,
+	.office-form-theme-primary-foreground.rateit .rateit-selected,
+	.office-form-theme-primary-foreground.rateit .rateit-hover {
+	color: #3b6075;
+}
+
+.office-form-theme-border-top {
+	border-top-color: #3b6075;
+}
+
+.office-form-theme-border-bottom-for-mobile {
+	border-bottom-color: #3b6075;
+}
+
+.office-form-theme-spinner {
+	border-color: #3b6075 #C7E0F4 #C7E0F4;
+}
+
+.office-form-theme-border {
+	border-color: #3b6075;
+}
+
+.office-form-theme-interactive-background.active {
+	background-color: #3b6075;
+}
+
+.office-form-theme-interactive-background:hover {
+	background-color: #2e4b5b;
+}
+
+.office-form-theme-interactive-background:focus {
+	background-color: #2e4b5b;
+}
+
+.office-form-theme-interactive-background:active {
+	background-color: #2e4b5b;
+}
+
+.office-form-theme-button-lightbackground {
+	color: #3b6075;
+}
+
+.office-form-theme-button-lightbackground.active {
+	background-color: #2e4b5b;
+}
+
+.office-form-theme-interactive-color {
+	color: #3b6075;
+}
+
+.office-form-theme-interactive-color:hover {
+	color: #2e4b5b;
+}
+
+.office-form-theme-interactive-color:focus {
+	color: #2e4b5b;
+}
+
+.office-form-theme-interactive-color:active {
+	color: #2e4b5b;
+}
+
+.office-form-theme-button {
+	color: white;
+	background: #3b6075;
+}
+
+.office-form-theme-button:hover {
+	background: #2e4b5b;
+}
+
+.office-form-theme-button:focus {
+	background: #2e4b5b;
+}
+
+.office-form-dark-theme-button {
+	color: #2e4b5b
+}
+
+.office-form-dark-theme-button:hover {
+	color: #2e4b5b;
+}
+
+.office-form-dark-theme-button:focus {
+	color: #2e4b5b;
+}
+
+.office-form-theme-page-background-active.active {
+	background: #3b6075;
+	color: #FFFFFF;
+}
+
+.office-form-theme-page-foreground-active.active,
+	.office-form-theme-select-color.active * {
+	color: #3b6075;
+}
+
+.office-form-theme-toggle.active {
+	background: #3b6075;
+	border-color: #3b6075;
+}
+
+.office-form-theme-border {
+	border-color: #3b6075;
+}
+
+.office-form-theme-outline {
+	outline-color: #3b6075;
+}
+
+.office-form-theme-button-foreground.active,
+	.office-form-theme-button-foreground.touch.active:hover {
+	color: white;
+	background: #3b6075;
+	outline-color: #3b6075;
+}
+
+.office-form-theme-button-foreground.active:hover {
+	background: #2e4b5b;
+	outline-color: #2e4b5b;
+}
+
+.office-form-theme-quiz-point {
+	color: #2e4b5b;
+}
+
+.office-form-theme-quiz-totalPoints-bar {
+	color: #3b6075;
+}
+
+.office-form-theme-image-question-background,
+	.office-form-theme-video-question-background {
+	background-color: #e6eef2;
+	outline: 1px solid transparent;
+}
+
+.office-form-theme-image-container-border {
+	border: 3px solid #e6eef2;
+}
+
+.office-form-sortable-chosen .office-form-sort-item {
+	background: #3b6075;
+	color: white;
+}
+
+.office-form-theme-sort-item {
+	color: white;
+	background: #3b6075;
+}
+
+.office-form-theme-sort-item:hover {
+	background: #2e4b5b;
+}
+
+.office-form-theme-focus-border .office-form-textfield-input:focus,
+	.office-form-theme-focus-border .form-control:focus,
+	.office-form-theme-focus-border .select-control:focus,
+	.office-form-theme-focus-border .picker--focused .picker__holder:focus
+	{
+	border-color: #3b6075;
+	outline-color: #3b6075;
+}
+
+.office-form-theme-bgcolor-hover:hover {
+	background: #e6eef2;
+}
+
+.office-form-theme-button-color:hover * {
+	color: #2e4b5b;
+}
+
+.form-intelligence-question-row.office-form-intelligence-theme-li {
+	outline: 1px solid #2e4b5b;
+	background-color: #e6eef2;
+}
+
+.form-intelligence-question-row.mobile-office-form-intelligence-theme-li
+	{
+	outline: 1px solid #3b6075;
+	background-color: #e6eef2;
+	color: #3b6075;
+}
+
+.office-form-insight-theme-control .simple-data-control-content {
+	color: #3b6075;
+}
+
+.office-form-insight-theme-control .simple-data-control-description {
+	color: #3b6075;
+}
+
+.office-form-insight-theme-control .simple-data-control-description:hover
+	{
+	color: #2e4b5b;
+}
+
+.office-form-insight-theme-control .simple-data-control-description:focus
+	{
+	color: #2e4b5b;
+}
+
+.office-form-insight-theme-control .simple-data-control-description:active
+	{
+	color: #2e4b5b;
+}
+
+.office-form-info-container .office-form-info-children.office-form-theme-spo-link
+	{
+	color: #3b6075;
+}
+
+.office-form-info-container .office-form-info-children.office-form-theme-spo-link:hover
+	{
+	color: #2e4b5b;
+}
+
+.office-form-spo-embed .office-form-footer-block .office-form-theme-spo-link
+	{
+	color: #3b6075;
+}
+
+.office-form-spo-embed .office-form-footer-block .office-form-theme-spo-link:hover
+	{
+	color: #2e4b5b;
+}
+
+.office-form-theme-spo-link {
+	color: #3b6075;
+}
+
+.office-form-theme-spo-link:hover {
+	color: #2e4b5b;
+}
+
+.thank-you-page-content {
+	opacity: .97;
+}
+
+.introduction-for-responser-container {
+	opacity: .97;
+}
+
+.office-form-theme-page-background {
+	background-image:
+		url(https://cdn.forms.office.net/forms/images/theme/intelligence/getty/table-note.jpg);
+}
+
+.office-form-theme-footer {
+	background: rgba(244, 244, 244, .8);
+}
+
+.preview-mobile-container.office-form-theme-page-background {
+	background: #e6eef2;
+}
+
+.preview-mobile-container .office-form-theme-footer {
+	background: rgba(255, 255, 255, .4);
+}
+
+.office-form-theme-shadow {
+	box-shadow: none;
+}

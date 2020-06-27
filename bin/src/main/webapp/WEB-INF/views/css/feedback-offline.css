@@ -1,0 +1,68 @@
+body{
+	width: 100%;
+	height: auto;
+	background: #dadaca;
+
+}
+
+#bottom{
+	width: 700px;
+	height: 1650px;
+	background: white;
+	margin-left: 420px;
+	margin-top: 50px;
+}
+#bottom h2{
+	text-align: center;
+	padding-top: 25px;
+}
+#bottom .top{
+	width: 700px;
+	height: 180px;
+	background: #3b6075;
+	color: white;
+	text-align: center;
+
+
+}
+#bottom .top img{
+	float: left;
+	margin-left: 50px;
+	margin-top: 15px;
+}
+#bottom .top h2{
+
+	padding-top: 80px;
+	margin-left: 30px;
+}
+#bottom h4{
+	text-align: center;
+
+}
+#bottom h5{
+	margin-left: 40px;
+}
+#bottom .in{
+	width: 550px;
+	height: 40px;
+	margin-left: 70px;
+}
+#bottom input{
+	margin-left: 45px;
+
+}
+#bottom button{
+	width: 120px;
+	height: 35px;
+	margin-left: 275px;
+	margin-top: 30px;
+	background: #3b6075;
+	color: white;
+}
+#bottom #top{
+	width: 700px;
+	height: 70px;
+	
+	float: left;
+
+}
