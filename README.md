@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ## HỆ THỐNG QUẢN LÝ FEEDBACK CHO CÁC KHÓA HỌC
 ## Một số hình ảnh của trang web
 
@@ -13,5 +13,3 @@
 =======
 ## Web feedback
 
-![Alt text](https://raw.github.com/vovantamvn/web-feedback/master/src/main/resources/login.png)
->>>>>>> 90cb1acf80ee7a31e4e82cd26a6bb1175f56a1d2
