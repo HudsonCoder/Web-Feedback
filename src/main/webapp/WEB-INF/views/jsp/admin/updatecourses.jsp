@@ -232,9 +232,8 @@ input:valid {
 								</div>
 								<div class="form-group">
 									<label for="noidung">Nội dung học:</label>
-									<textarea class="form-control" rows="5" name="noidung"
-										id="noidung" required />
-									>${khoahoc.khNoiDung}
+									<textarea class="form-control" rows="5" name="noidung" id="noidung" required >
+									${khoahoc.khNoiDung}
 									</textarea>
 							</div>
 
