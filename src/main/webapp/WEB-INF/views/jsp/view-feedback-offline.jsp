@@ -27,6 +27,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <link rel="stylesheet"
 	href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf-8"
+	src="https://www.google.com/jsapi"></script>
+
 <style type="text/css">
 #myBtn {
 	display: none;
@@ -48,6 +51,7 @@
 	background-color: #555;
 }
 </style>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -235,6 +239,7 @@
 											<canvas id="myChart12"></canvas>
 										</td>
 									</tr>
+									
 								</tbody>
 
 							</table>
@@ -271,7 +276,8 @@
 		<script src="/resources/plugins/chart.js/Chart.min.js"></script>
 		<script src="/resources/dist/js/demo.js"></script>
 		<script src="/resources/dist/js/pages/dashboard3.js"></script>
-		 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" charset="utf8"
+			src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
 		<script>
 		$(function(){
@@ -296,20 +302,27 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
 </script>
 
-		<script>
+
 	
 
+		<script>
+ 
+	
         var ctx1 = document.getElementById('myChart1').getContext('2d');
         var myPieChart1 = new Chart(ctx1, {
             type: 'pie',
+            
             data: {
                 datasets: [{
                     data: ${data[0].getData()},
                     backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
                 }],
-
+                startAngle: 240,
+        		yValueFormatString: "##0.00\"%\"",
+        		indexLabel: "{label} {y}",
                 // These labels appear in the legend and in the tooltips when hovering different arcs
                 labels: [
                     '1 Sao',
@@ -318,7 +331,9 @@ function topFunction() {
                     '4 Sao',
                     '5 Sao'
                 ]
+            
             }
+    	
         });
 
         var ctx2 = document.getElementById('myChart2').getContext('2d');
