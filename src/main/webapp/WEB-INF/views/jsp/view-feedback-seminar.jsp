@@ -24,7 +24,8 @@
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css"
+	href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <style type="text/css">
 #myBtn {
@@ -42,29 +43,29 @@
 	padding: 15px;
 	border-radius: 4px;
 }
+
 [class$="-legend"] {
-  list-style: none;
-  cursor: pointer;
-  padding-left: 0;
+	list-style: none;
+	cursor: pointer;
+	padding-left: 0;
 }
 
 [class$="-legend"] li {
-  display: inline-block;
-  padding: 0 5px;
+	display: inline-block;
+	padding: 0 5px;
 }
 
 [class$="-legend"] li.hidden {
-  text-decoration: line-through;
+	text-decoration: line-through;
 }
 
 [class$="-legend"] li span {
-  border-radius: 5px;
-  display: inline-block;
-  height: 10px;
-  margin-right: 10px;
-  width: 10px;
+	border-radius: 5px;
+	display: inline-block;
+	height: 10px;
+	margin-right: 10px;
+	width: 10px;
 }
-
 
 #myBtn:hover {
 	background-color: #555;
@@ -80,9 +81,7 @@
 			</div>
 			<div class="col-sm-8" style="padding: 30px;">
 				<div class="row">
-					<div class="col-sm-6">
-						
-					</div>
+					<div class="col-sm-6"></div>
 					<div class="col-sm-6" style="padding-bottom: 8px;">
 						<div class="col-sm-4"></div>
 						<div class="col-sm-8 menu-container">
@@ -142,7 +141,7 @@
 														<tr>
 															<td>${count.count}</td>
 															<td>${seminar.ctCauHoi1}</td>
-															
+
 														</tr>
 													</c:forEach>
 
@@ -169,7 +168,7 @@
 														<tr>
 															<td>${count.count}</td>
 															<td>${seminar.ctCauHoi2}</td>
-															
+
 														</tr>
 													</c:forEach>
 
@@ -196,7 +195,7 @@
 														<tr>
 															<td>${count.count}</td>
 															<td>${seminar.ctCauHoi3}</td>
-															
+
 														</tr>
 													</c:forEach>
 
@@ -223,7 +222,7 @@
 														<tr>
 															<td>${count.count}</td>
 															<td>${seminar.ctCauHoi4}</td>
-															
+
 														</tr>
 													</c:forEach>
 
@@ -250,7 +249,7 @@
 														<tr>
 															<td>${count.count}</td>
 															<td>${seminar.ctCauHoi5}</td>
-															
+
 														</tr>
 													</c:forEach>
 
@@ -262,7 +261,7 @@
 										<td>6</td>
 										<td>${cauhois[5].noiDung}</td>
 										<td>
-										 <div id="legend1"></div>
+											<div id="legend1"></div>
 											<canvas id="myChart1"></canvas>
 										</td>
 									</tr>
@@ -270,7 +269,7 @@
 										<td>7</td>
 										<td>${cauhois[6].noiDung}</td>
 										<td>
-										<div id="legend2"></div>
+											<div id="legend2"></div>
 											<canvas id="myChart2"></canvas>
 										</td>
 									</tr>
@@ -278,7 +277,7 @@
 										<td>8</td>
 										<td>${cauhois[7].noiDung}</td>
 										<td>
-										<div id="legend3"></div>
+											<div id="legend3"></div>
 											<canvas id="myChart3"></canvas>
 										</td>
 									</tr>
@@ -286,7 +285,7 @@
 										<td>9</td>
 										<td>${cauhois[8].noiDung}</td>
 										<td>
-										<div id="legend4"></div>
+											<div id="legend4"></div>
 											<canvas id="myChart4"></canvas>
 										</td>
 									</tr>
@@ -294,7 +293,7 @@
 										<td>10</td>
 										<td>${cauhois[9].noiDung}</td>
 										<td>
-										<div id="legend5"></div>
+											<div id="legend5"></div>
 											<canvas id="myChart5"></canvas>
 										</td>
 									</tr>
@@ -302,7 +301,7 @@
 										<td>11</td>
 										<td>${cauhois[10].noiDung}</td>
 										<td>
-										 <div id="legend6"></div>
+											<div id="legend6"></div>
 											<canvas id="myChart6"></canvas>
 										</td>
 									</tr>
@@ -310,7 +309,7 @@
 										<td>12</td>
 										<td>${cauhois[11].noiDung}</td>
 										<td>
-										 <div id="legend7"></div>
+											<div id="legend7"></div>
 											<canvas id="myChart7"></canvas>
 										</td>
 									</tr>
@@ -353,7 +352,8 @@
 		<script src="/resources/plugins/chart.js/Chart.min.js"></script>
 		<script src="/resources/dist/js/demo.js"></script>
 		<script src="/resources/dist/js/pages/dashboard3.js"></script>
- <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" charset="utf8"
+			src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
 		<script>
 		$(function(){

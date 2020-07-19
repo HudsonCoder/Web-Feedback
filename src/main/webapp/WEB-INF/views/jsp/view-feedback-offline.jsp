@@ -47,6 +47,29 @@
 	border-radius: 4px;
 }
 
+[class$="-legend"] {
+	list-style: none;
+	cursor: pointer;
+	padding-left: 0;
+}
+
+[class$="-legend"] li {
+	display: inline-block;
+	padding: 0 5px;
+}
+
+[class$="-legend"] li.hidden {
+	text-decoration: line-through;
+}
+
+[class$="-legend"] li span {
+	border-radius: 5px;
+	display: inline-block;
+	height: 10px;
+	margin-right: 10px;
+	width: 10px;
+}
+
 #myBtn:hover {
 	background-color: #555;
 }
@@ -159,6 +182,7 @@
 										<td>3</td>
 										<td>${cauhois[2].noiDung}</td>
 										<td>
+											<div id="legend1"></div>
 											<canvas id="myChart1"></canvas>
 										</td>
 									</tr>
@@ -166,6 +190,7 @@
 										<td>4</td>
 										<td>${cauhois[3].noiDung}</td>
 										<td>
+											<div id="legend2"></div>
 											<canvas id="myChart2"></canvas>
 										</td>
 									</tr>
@@ -173,6 +198,7 @@
 										<td>5</td>
 										<td>${cauhois[4].noiDung}</td>
 										<td>
+											<div id="legend3"></div>
 											<canvas id="myChart3"></canvas>
 										</td>
 									</tr>
@@ -180,6 +206,7 @@
 										<td>6</td>
 										<td>${cauhois[5].noiDung}</td>
 										<td>
+											<div id="legend4"></div>
 											<canvas id="myChart4"></canvas>
 										</td>
 									</tr>
@@ -187,13 +214,16 @@
 										<td>7</td>
 										<td>${cauhois[6].noiDung}</td>
 										<td>
+											<div id="legend5"></div>
 											<canvas id="myChart5"></canvas>
 										</td>
 									</tr>
 									<tr>
 										<td>8</td>
+
 										<td>${cauhois[7].noiDung}</td>
 										<td>
+											<div id="legend6"></div>
 											<canvas id="myChart6"></canvas>
 										</td>
 									</tr>
@@ -201,6 +231,7 @@
 										<td>9</td>
 										<td>${cauhois[8].noiDung}</td>
 										<td>
+											<div id="legend7"></div>
 											<canvas id="myChart7"></canvas>
 										</td>
 									</tr>
@@ -239,7 +270,7 @@
 											<canvas id="myChart12"></canvas>
 										</td>
 									</tr>
-									
+
 								</tbody>
 
 							</table>
@@ -306,155 +337,754 @@ function topFunction() {
 </script>
 
 
-	
+
 
 		<script>
  
 	
-        var ctx1 = document.getElementById('myChart1').getContext('2d');
-        var myPieChart1 = new Chart(ctx1, {
-            type: 'pie',
-            
-            data: {
-                datasets: [{
-                    data: ${data[0].getData()},
-                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
-                }],
-                startAngle: 240,
-        		yValueFormatString: "##0.00\"%\"",
-        		indexLabel: "{label} {y}",
-                // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    '1 Sao',
-                    '2 Sao',
-                    '3 Sao',
-                    '4 Sao',
-                    '5 Sao'
-                ]
-            
-            }
-    	
-        });
+		  var ctx1 = document.getElementById('myChart1').getContext('2d');
+	      
+	        var chart= new Chart(ctx1, {
+	            type: 'pie',
+	            data: {
+	                datasets: [{
+	                    data: ${data[0].getData()},
+	                   
+	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
+	                }],
 
-        var ctx2 = document.getElementById('myChart2').getContext('2d');
-        var myPieChart2 = new Chart(ctx2, {
-            type: 'pie',
-            data: {
-                datasets: [{
-                    data: ${data[1].getData()},
-                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
-                }],
+	                // These labels appear in the legend and in the tooltips when hovering different arcs
+	                labels: [
+	                    '1 Sao',
+	                    '2 Sao',
+	                    '3 Sao',
+	                    '4 Sao',
+	                    '5 Sao'
+	                ]
+	            },  options: {
+	                responsive: true,
+	                tooltips: {
+	                   callbacks: {
+	                      label: function(tooltipItem, data) {
 
-                // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    '1 Sao',
-                    '2 Sao',
-                    '3 Sao',
-                    '4 Sao',
-                    '5 Sao'
-                ]
-            }
-        });
+	                         var dataset = data.datasets[tooltipItem.datasetIndex];
 
-        var ctx3 = document.getElementById('myChart3').getContext('2d');
-        var myPieChart3 = new Chart(ctx3, {
-            type: 'pie',
-            data: {
-                datasets: [{
-                    data: ${data[2].getData()},
-                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
-                }],
+	                         var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                            return previousValue + currentValue;
+	                         });
 
-                // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    '1 Sao',
-                    '2 Sao',
-                    '3 Sao',
-                    '4 Sao',
-                    '5 Sao'
-                ]
-            }
-        });
+	                         var currentValue = dataset.data[tooltipItem.index];
 
-        var ctx4 = document.getElementById('myChart4').getContext('2d');
-        var myPieChart4 = new Chart(ctx4, {
-            type: 'pie',
-            data: {
-                datasets: [{
-                    data: ${data[3].getData()},
-                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
-                }],
+	                         var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
 
-                // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    '1 Sao',
-                    '2 Sao',
-                    '3 Sao',
-                    '4 Sao',
-                    '5 Sao'
-                ]
-            }
-        });
+	                         return precentage + "%";
+	                      }
+	                   }
+	                },
+	                legendCallback: function(chart) {
+	                   var text = [];
+	                   text.push('<ul class="' + chart.id + '-legend">');
 
-        var ctx5 = document.getElementById('myChart5').getContext('2d');
-        var myPieChart5 = new Chart(ctx5, {
-            type: 'pie',
-            data: {
-                datasets: [{
-                    data: ${data[4].getData()},
-                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
-                }],
+	                   var data = chart.data;
+	                   var datasets = data.datasets;
+	                   var labels = data.labels;
 
-                // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    '1 Sao',
-                    '2 Sao',
-                    '3 Sao',
-                    '4 Sao',
-                    '5 Sao'
-                ]
-            }
-        });
+	                   if (datasets.length) {
+	                      for (var i = 0; i < datasets[0].data.length; ++i) {
+	                         text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
+	                         if (labels[i]) {
 
-        var ctx6 = document.getElementById('myChart6').getContext('2d');
-        var myPieChart6 = new Chart(ctx6, {
-            type: 'pie',
-            data: {
-                datasets: [{
-                    data: ${data[5].getData()},
-                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
-                }],
+	                            // calculate percentage
+	                            var total = datasets[0].data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                               return previousValue + currentValue;
+	                            });
+	                            var currentValue = datasets[0].data[i];
+	                            var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
 
-                // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    '1 Sao',
-                    '2 Sao',
-                    '3 Sao',
-                    '4 Sao',
-                    '5 Sao'
-                ]
-            }
-        });
+	                            text.push(labels[i] + ' (' + precentage + '%)');
+	                         }
+	                         text.push('</li>');
+	                      }
+	                   }
+	                   text.push('</ul>');
+	                   return text.join('');
+	                },	
+	              legend: {
+	                display: false
+	              },
+	            }
+	          });
 
-        var ctx7 = document.getElementById('myChart7').getContext('2d');
-        var myPieChart7 = new Chart(ctx7, {
-            type: 'pie',
-            data: {
-                datasets: [{
-                    data: ${data[6].getData()},
-                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
-                }],
+	          var myLegendContainer = document.getElementById("legend1");
+	          // generate HTML legend
+	          myLegendContainer.innerHTML = chart.generateLegend();
+	          // bind onClick event to all LI-tags of the legend
+	          var legendItems = myLegendContainer.getElementsByTagName('li');
+	          for (var i = 0; i < legendItems.length; i += 1) {
+	            legendItems[i].addEventListener("click", legendClickCallback, false);
+	          }
 
-                // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    '1 Sao',
-                    '2 Sao',
-                    '3 Sao',
-                    '4 Sao',
-                    '5 Sao'
-                ]
-            }
-        });
+	          function legendClickCallback(event) {
+	            event = event || window.event;
+
+	            var target = event.target || event.srcElement;
+	            while (target.nodeName !== 'LI') {
+	              target = target.parentElement;
+	            }
+	            var parent = target.parentElement;
+	            var chartId = parseInt(parent.classList[0].split("-")[0], 10);
+	            var chart = Chart.instances[chartId];
+	            var index = Array.prototype.slice.call(parent.children).indexOf(target);
+	            var meta = chart.getDatasetMeta(0);
+	            console.log(index);
+	          	var item = meta.data[index];
+
+	            if (item.hidden === null || item.hidden === false) {
+	              item.hidden = true;
+	              target.classList.add('hidden');
+	            } else {
+	              target.classList.remove('hidden');
+	              item.hidden = null;
+	            }
+	            chart.update();
+	          }
+	       
+
+	        var ctx2 = document.getElementById('myChart2').getContext('2d');
+	        var chart2 = new Chart(ctx2, {
+	            type: 'pie',
+	            data: {
+	                datasets: [{
+	                    data: ${data[1].getData()},
+	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
+	                }],
+
+	                // These labels appear in the legend and in the tooltips when hovering different arcs
+	                labels: [
+	                    '1 Sao',
+	                    '2 Sao',
+	                    '3 Sao',
+	                    '4 Sao',
+	                    '5 Sao'
+	                ]
+	            },
+	            options: {
+	                responsive: true,
+	                tooltips: {
+	                   callbacks: {
+	                      label: function(tooltipItem, data) {
+
+	                         var dataset = data.datasets[tooltipItem.datasetIndex];
+
+	                         var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                            return previousValue + currentValue;
+	                         });
+
+	                         var currentValue = dataset.data[tooltipItem.index];
+
+	                         var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                         return precentage + "%";
+	                      }
+	                   }
+	                },
+	                legendCallback: function(chart2) {
+	                   var text = [];
+	                   text.push('<ul class="' + chart2.id + '-legend">');
+
+	                   var data = chart2.data;
+	                   var datasets = data.datasets;
+	                   var labels = data.labels;
+
+	                   if (datasets.length) {
+	                      for (var i = 0; i < datasets[0].data.length; ++i) {
+	                         text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
+	                         if (labels[i]) {
+
+	                            // calculate percentage
+	                            var total = datasets[0].data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                               return previousValue + currentValue;
+	                            });
+	                            var currentValue = datasets[0].data[i];
+	                            var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                            text.push(labels[i] + ' (' + precentage + '%)');
+	                         }
+	                         text.push('</li>');
+	                      }
+	                   }
+	                   text.push('</ul>');
+	                   return text.join('');
+	                },	
+	              legend: {
+	                display: false
+	              },
+	            }
+	          });
+
+	          var myLegendContainer = document.getElementById("legend2");
+	          // generate HTML legend
+	          myLegendContainer.innerHTML = chart2.generateLegend();
+	          // bind onClick event to all LI-tags of the legend
+	          var legendItems = myLegendContainer.getElementsByTagName('li');
+	          for (var i = 0; i < legendItems.length; i += 1) {
+	            legendItems[i].addEventListener("click", legendClickCallback, false);
+	          }
+
+	          function legendClickCallback(event) {
+	            event = event || window.event;
+
+	            var target = event.target || event.srcElement;
+	            while (target.nodeName !== 'LI') {
+	              target = target.parentElement;
+	            }
+	            var parent = target.parentElement;
+	            var chart2Id = parseInt(parent.classList[0].split("-")[0], 10);
+	            var chart2 = Chart.instances[chart2Id];
+	            var index = Array.prototype.slice.call(parent.children).indexOf(target);
+	            var meta = chart2.getDatasetMeta(0);
+	            console.log(index);
+	          	var item = meta.data[index];
+
+	            if (item.hidden === null || item.hidden === false) {
+	              item.hidden = true;
+	              target.classList.add('hidden');
+	            } else {
+	              target.classList.remove('hidden');
+	              item.hidden = null;
+	            }
+	            chart2.update();
+	          }
+
+	          
+	        var ctx3 = document.getElementById('myChart3').getContext('2d');
+	        var chart3 = new Chart(ctx3, {
+	            type: 'pie',
+	            data: {
+	                datasets: [{
+	                    data: ${data[2].getData()},
+	             backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
+	                }],
+
+	                // These labels appear in the legend and in the tooltips when hovering different arcs
+	                labels: [
+	                    '1 Sao',
+	                    '2 Sao',
+	                    '3 Sao',
+	                    '4 Sao',
+	                    '5 Sao'
+	                ]
+	            },
+	            options: {
+	                responsive: true,
+	                tooltips: {
+	                   callbacks: {
+	                      label: function(tooltipItem, data) {
+
+	                         var dataset = data.datasets[tooltipItem.datasetIndex];
+
+	                         var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                            return previousValue + currentValue;
+	                         });
+
+	                         var currentValue = dataset.data[tooltipItem.index];
+
+	                         var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                         return precentage + "%";
+	                      }
+	                   }
+	                },
+	                legendCallback: function(chart3) {
+	                   var text = [];
+	                   text.push('<ul class="' + chart3.id + '-legend">');
+
+	                   var data = chart3.data;
+	                   var datasets = data.datasets;
+	                   var labels = data.labels;
+
+	                   if (datasets.length) {
+	                      for (var i = 0; i < datasets[0].data.length; ++i) {
+	                         text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
+	                         if (labels[i]) {
+
+	                            // calculate percentage
+	                            var total = datasets[0].data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                               return previousValue + currentValue;
+	                            });
+	                            var currentValue = datasets[0].data[i];
+	                            var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                            text.push(labels[i] + ' (' + precentage + '%)');
+	                         }
+	                         text.push('</li>');
+	                      }
+	                   }
+	                   text.push('</ul>');
+	                   return text.join('');
+	                },	
+	              legend: {
+	                display: false
+	              },
+	            }
+	          });
+
+	          var myLegendContainer = document.getElementById("legend3");
+	          // generate HTML legend
+	          myLegendContainer.innerHTML = chart3.generateLegend();
+	          // bind onClick event to all LI-tags of the legend
+	          var legendItems = myLegendContainer.getElementsByTagName('li');
+	          for (var i = 0; i < legendItems.length; i += 1) {
+	            legendItems[i].addEventListener("click", legendClickCallback, false);
+	          }
+
+	          function legendClickCallback(event) {
+	            event = event || window.event;
+
+	            var target = event.target || event.srcElement;
+	            while (target.nodeName !== 'LI') {
+	              target = target.parentElement;
+	            }
+	            var parent = target.parentElement;
+	            var chart3Id = parseInt(parent.classList[0].split("-")[0], 10);
+	            var chart3 = Chart.instances[chart3Id];
+	            var index = Array.prototype.slice.call(parent.children).indexOf(target);
+	            var meta = chart3.getDatasetMeta(0);
+	            console.log(index);
+	          	var item = meta.data[index];
+
+	            if (item.hidden === null || item.hidden === false) {
+	              item.hidden = true;
+	              target.classList.add('hidden');
+	            } else {
+	              target.classList.remove('hidden');
+	              item.hidden = null;
+	            }
+	            chart3.update();
+	          }
+	        var ctx4 = document.getElementById('myChart4').getContext('2d');
+	        var chart4 = new Chart(ctx4, {
+	            type: 'pie',
+	            data: {
+	                datasets: [{
+	                    data: ${data[3].getData()},
+	     backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
+	                }],
+
+	                // These labels appear in the legend and in the tooltips when hovering different arcs
+	                labels: [
+	                    '1 Sao',
+	                    '2 Sao',
+	                    '3 Sao',
+	                    '4 Sao',
+	                    '5 Sao'
+	                ]
+	            },
+	            options: {
+	                responsive: true,
+	                tooltips: {
+	                   callbacks: {
+	                      label: function(tooltipItem, data) {
+
+	                         var dataset = data.datasets[tooltipItem.datasetIndex];
+
+	                         var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                            return previousValue + currentValue;
+	                         });
+
+	                         var currentValue = dataset.data[tooltipItem.index];
+
+	                         var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                         return precentage + "%";
+	                      }
+	                   }
+	                },
+	                legendCallback: function(chart4) {
+	                   var text = [];
+	                   text.push('<ul class="' + chart4.id + '-legend">');
+
+	                   var data = chart4.data;
+	                   var datasets = data.datasets;
+	                   var labels = data.labels;
+
+	                   if (datasets.length) {
+	                      for (var i = 0; i < datasets[0].data.length; ++i) {
+	                         text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
+	                         if (labels[i]) {
+
+	                            // calculate percentage
+	                            var total = datasets[0].data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                               return previousValue + currentValue;
+	                            });
+	                            var currentValue = datasets[0].data[i];
+	                            var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                            text.push(labels[i] + ' (' + precentage + '%)');
+	                         }
+	                         text.push('</li>');
+	                      }
+	                   }
+	                   text.push('</ul>');
+	                   return text.join('');
+	                },	
+	              legend: {
+	                display: false
+	              },
+	            }
+	          });
+
+	          var myLegendContainer = document.getElementById("legend4");
+	          // generate HTML legend
+	          myLegendContainer.innerHTML = chart4.generateLegend();
+	          // bind onClick event to all LI-tags of the legend
+	          var legendItems = myLegendContainer.getElementsByTagName('li');
+	          for (var i = 0; i < legendItems.length; i += 1) {
+	            legendItems[i].addEventListener("click", legendClickCallback, false);
+	          }
+
+	          function legendClickCallback(event) {
+	            event = event || window.event;
+
+	            var target = event.target || event.srcElement;
+	            while (target.nodeName !== 'LI') {
+	              target = target.parentElement;
+	            }
+	            var parent = target.parentElement;
+	            var chart4Id = parseInt(parent.classList[0].split("-")[0], 10);
+	            var chart4 = Chart.instances[chart4Id];
+	            var index = Array.prototype.slice.call(parent.children).indexOf(target);
+	            var meta = chart4.getDatasetMeta(0);
+	            console.log(index);
+	          	var item = meta.data[index];
+
+	            if (item.hidden === null || item.hidden === false) {
+	              item.hidden = true;
+	              target.classList.add('hidden');
+	            } else {
+	              target.classList.remove('hidden');
+	              item.hidden = null;
+	            }
+	            chart4.update();
+	          }
+
+	        var ctx5 = document.getElementById('myChart5').getContext('2d');
+	        var chart5 = new Chart(ctx5, {
+	            type: 'pie',
+	            data: {
+	                datasets: [{
+	                    data: ${data[4].getData()},
+	      backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
+	                }],
+
+	                // These labels appear in the legend and in the tooltips when hovering different arcs
+	                labels: [
+	                    '1 Sao',
+	                    '2 Sao',
+	                    '3 Sao',
+	                    '4 Sao',
+	                    '5 Sao'
+	                ]
+	            },
+	            options: {
+	                responsive: true,
+	                tooltips: {
+	                   callbacks: {
+	                      label: function(tooltipItem, data) {
+
+	                         var dataset = data.datasets[tooltipItem.datasetIndex];
+
+	                         var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                            return previousValue + currentValue;
+	                         });
+
+	                         var currentValue = dataset.data[tooltipItem.index];
+
+	                         var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                         return precentage + "%";
+	                      }
+	                   }
+	                },
+	                legendCallback: function(chart5) {
+	                   var text = [];
+	                   text.push('<ul class="' + chart5.id + '-legend">');
+
+	                   var data = chart5.data;
+	                   var datasets = data.datasets;
+	                   var labels = data.labels;
+
+	                   if (datasets.length) {
+	                      for (var i = 0; i < datasets[0].data.length; ++i) {
+	                         text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
+	                         if (labels[i]) {
+
+	                            // calculate percentage
+	                            var total = datasets[0].data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                               return previousValue + currentValue;
+	                            });
+	                            var currentValue = datasets[0].data[i];
+	                            var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                            text.push(labels[i] + ' (' + precentage + '%)');
+	                         }
+	                         text.push('</li>');
+	                      }
+	                   }
+	                   text.push('</ul>');
+	                   return text.join('');
+	                },	
+	              legend: {
+	                display: false
+	              },
+	            }
+	          });
+
+	          var myLegendContainer = document.getElementById("legend5");
+	          // generate HTML legend
+	          myLegendContainer.innerHTML = chart5.generateLegend();
+	          // bind onClick event to all LI-tags of the legend
+	          var legendItems = myLegendContainer.getElementsByTagName('li');
+	          for (var i = 0; i < legendItems.length; i += 1) {
+	            legendItems[i].addEventListener("click", legendClickCallback, false);
+	          }
+
+	          function legendClickCallback(event) {
+	            event = event || window.event;
+
+	            var target = event.target || event.srcElement;
+	            while (target.nodeName !== 'LI') {
+	              target = target.parentElement;
+	            }
+	            var parent = target.parentElement;
+	            var chart5Id = parseInt(parent.classList[0].split("-")[0], 10);
+	            var chart5 = Chart.instances[chart5Id];
+	            var index = Array.prototype.slice.call(parent.children).indexOf(target);
+	            var meta = chart5.getDatasetMeta(0);
+	            console.log(index);
+	          	var item = meta.data[index];
+
+	            if (item.hidden === null || item.hidden === false) {
+	              item.hidden = true;
+	              target.classList.add('hidden');
+	            } else {
+	              target.classList.remove('hidden');
+	              item.hidden = null;
+	            }
+	            chart5.update();
+	          }
+
+	        var ctx6 = document.getElementById('myChart6').getContext('2d');
+	        var chart6 = new Chart(ctx6, {
+	            type: 'pie',
+	            data: {
+	                datasets: [{
+	                    data: ${data[5].getData()},
+		    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
+	                }],
+
+	                // These labels appear in the legend and in the tooltips when hovering different arcs
+	                labels: [
+	                    '1 Sao',
+	                    '2 Sao',
+	                    '3 Sao',
+	                    '4 Sao',
+	                    '5 Sao'
+	                ]
+	            },
+	            options: {
+	                responsive: true,
+	                tooltips: {
+	                   callbacks: {
+	                      label: function(tooltipItem, data) {
+
+	                         var dataset = data.datasets[tooltipItem.datasetIndex];
+
+	                         var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                            return previousValue + currentValue;
+	                         });
+
+	                         var currentValue = dataset.data[tooltipItem.index];
+
+	                         var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                         return precentage + "%";
+	                      }
+	                   }
+	                },
+	                legendCallback: function(chart6) {
+	                   var text = [];
+	                   text.push('<ul class="' + chart6.id + '-legend">');
+
+	                   var data = chart6.data;
+	                   var datasets = data.datasets;
+	                   var labels = data.labels;
+
+	                   if (datasets.length) {
+	                      for (var i = 0; i < datasets[0].data.length; ++i) {
+	                         text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
+	                         if (labels[i]) {
+
+	                            // calculate percentage
+	                            var total = datasets[0].data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                               return previousValue + currentValue;
+	                            });
+	                            var currentValue = datasets[0].data[i];
+	                            var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                            text.push(labels[i] + ' (' + precentage + '%)');
+	                         }
+	                         text.push('</li>');
+	                      }
+	                   }
+	                   text.push('</ul>');
+	                   return text.join('');
+	                },	
+	              legend: {
+	                display: false
+	              },
+	            }
+	          });
+
+	          var myLegendContainer = document.getElementById("legend6");
+	          // generate HTML legend
+	          myLegendContainer.innerHTML = chart6.generateLegend();
+	          // bind onClick event to all LI-tags of the legend
+	          var legendItems = myLegendContainer.getElementsByTagName('li');
+	          for (var i = 0; i < legendItems.length; i += 1) {
+	            legendItems[i].addEventListener("click", legendClickCallback, false);
+	          }
+
+	          function legendClickCallback(event) {
+	            event = event || window.event;
+
+	            var target = event.target || event.srcElement;
+	            while (target.nodeName !== 'LI') {
+	              target = target.parentElement;
+	            }
+	            var parent = target.parentElement;
+	            var chart6Id = parseInt(parent.classList[0].split("-")[0], 10);
+	            var chart6 = Chart.instances[chart6Id];
+	            var index = Array.prototype.slice.call(parent.children).indexOf(target);
+	            var meta = chart6.getDatasetMeta(0);
+	            console.log(index);
+	          	var item = meta.data[index];
+
+	            if (item.hidden === null || item.hidden === false) {
+	              item.hidden = true;
+	              target.classList.add('hidden');
+	            } else {
+	              target.classList.remove('hidden');
+	              item.hidden = null;
+	            }
+	            chart6.update();
+	          }
+
+	        var ctx7 = document.getElementById('myChart7').getContext('2d');
+	        var chart7 = new Chart(ctx7, {
+	            type: 'pie',
+	            data: {
+	                datasets: [{
+	                    data: ${data[6].getData()},
+	                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]  
+	                }],
+
+	                // These labels appear in the legend and in the tooltips when hovering different arcs
+	                labels: [
+	                    '1 Sao',
+	                    '2 Sao',
+	                    '3 Sao',
+	                    '4 Sao',
+	                    '5 Sao'
+	                ]
+	            },
+	            options: {
+	                responsive: true,
+	                tooltips: {
+	                   callbacks: {
+	                      label: function(tooltipItem, data) {
+
+	                         var dataset = data.datasets[tooltipItem.datasetIndex];
+
+	                         var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                            return previousValue + currentValue;
+	                         });
+
+	                         var currentValue = dataset.data[tooltipItem.index];
+
+	                         var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                         return precentage + "%";
+	                      }
+	                   }
+	                },
+	                legendCallback: function(chart7) {
+	                   var text = [];
+	                   text.push('<ul class="' + chart7.id + '-legend">');
+
+	                   var data = chart7.data;
+	                   var datasets = data.datasets;
+	                   var labels = data.labels;
+
+	                   if (datasets.length) {
+	                      for (var i = 0; i < datasets[0].data.length; ++i) {
+	                         text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
+	                         if (labels[i]) {
+
+	                            // calculate percentage
+	                            var total = datasets[0].data.reduce(function(previousValue, currentValue, currentIndex, array) {
+	                               return previousValue + currentValue;
+	                            });
+	                            var currentValue = datasets[0].data[i];
+	                            var precentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+	                            text.push(labels[i] + ' (' + precentage + '%)');
+	                         }
+	                         text.push('</li>');
+	                      }
+	                   }
+	                   text.push('</ul>');
+	                   return text.join('');
+	                },	
+	              legend: {
+	                display: false
+	              },
+	            }
+	          });
+
+	          var myLegendContainer = document.getElementById("legend7");
+	          // generate HTML legend
+	          myLegendContainer.innerHTML = chart7.generateLegend();
+	          // bind onClick event to all LI-tags of the legend
+	          var legendItems = myLegendContainer.getElementsByTagName('li');
+	          for (var i = 0; i < legendItems.length; i += 1) {
+	            legendItems[i].addEventListener("click", legendClickCallback, false);
+	          }
+
+	          function legendClickCallback(event) {
+	            event = event || window.event;
+
+	            var target = event.target || event.srcElement;
+	            while (target.nodeName !== 'LI') {
+	              target = target.parentElement;
+	            }
+	            var parent = target.parentElement;
+	            var chart7Id = parseInt(parent.classList[0].split("-")[0], 10);
+	            var chart7 = Chart.instances[chart7Id];
+	            var index = Array.prototype.slice.call(parent.children).indexOf(target);
+	            var meta = chart7.getDatasetMeta(0);
+	            console.log(index);
+	          	var item = meta.data[index];
+
+	            if (item.hidden === null || item.hidden === false) {
+	              item.hidden = true;
+	              target.classList.add('hidden');
+	            } else {
+	              target.classList.remove('hidden');
+	              item.hidden = null;
+	            }
+	            chart7.update();
+	          }
 
         var ctx8 = document.getElementById('myChart8').getContext('2d');
         var myPieChart8 = new Chart(ctx8, {
